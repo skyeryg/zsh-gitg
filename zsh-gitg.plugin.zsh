@@ -43,7 +43,7 @@ gitg () {
     print -P "%B%F{blue}$directory%b%f already exist"
   else
     print -P "Start adding repository %B%F{green}$repo_url%b%f"
-    git clone --recursive $repo_url $directory
+    git clone --depth 1 --recursive $repo_url $directory
   fi
 
   [[ $? -eq 0 ]] && {
